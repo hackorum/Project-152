@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  <script src="lambo.js"></script>
+</head>
+
+<body>
+  <a-scene>
+    <a-camera position="0 7 30">
+    </a-camera>
+    <a-assets>
+      <a-asset-item id="car3d" src="./car3d/scene.gltf"></a-asset-item>
+    </a-assets>
+    <a-entity lamborghini gltf-model="#car3d" light="type: ambient; color: #BBB; intensity: 4" scale="5 5 5"></a-entity>
+    <a-circle color="#222" radius="10" rotation="-90 0 0"></a-circle>
+  </a-scene>
+</body>
+</html>
