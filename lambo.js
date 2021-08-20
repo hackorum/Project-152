@@ -6,7 +6,8 @@ AFRAME.registerComponent("lamborghini", {
     },
   },
   update: function () {
-    window.addEventListener("click", (e) => {
+    // less efficient method
+    window.addEventListener("click", (_e) => {
       this.data.clicks += 1;
       if (this.data.clicks == 1) {
         this.el.setAttribute("rotation", { x: 0, y: 45, z: 0 });
@@ -27,5 +28,11 @@ AFRAME.registerComponent("lamborghini", {
         this.data.clicks = 0;
       }
     });
+    // more efficient method
+    // window.addEventListener("click", (_e) => {
+    //   rotationY = this.el.getAttribute("rotation").y;
+    //   if (rotationY == 360) rotationY = -45;
+    //   this.el.setAttribute("rotation", { x: 0, y: rotationY + 45, z: 0 });
+    // });
   },
 });
